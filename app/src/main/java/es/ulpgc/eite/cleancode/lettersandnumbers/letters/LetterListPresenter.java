@@ -99,12 +99,21 @@ public class LetterListPresenter implements LetterListContract.Presenter {
   public void onClickLetterListCell(LetterData data) {
     // Log.e(TAG, "onClickLetterListCell()");
     //cambio de pantalla al de los numbers
+    LettersToNumbersState state = new LettersToNumbersState();
+    //Esta línea no la entiendo :(
+    state.data = this.state.data;
+    passStateToNextScreen(state);
+    view.get().navigateToNextScreen();
   }
 
   @Override
   public void onClickLetterListButton() {
     // Log.e(TAG, "onClickLetterListButton()");
     //aumento las letras que aparecen
+    model.newLetter(state.data);
+    state.datasource = model.getLetterDataList();
+    state.data = model.getData();
+    view.get().onDataUpdated(state);
   }
 
   @Override

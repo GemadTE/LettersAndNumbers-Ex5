@@ -56,6 +56,7 @@ public class LetterListActivity
     presenter.onBackPressed();
   }
 
+
   @Override
   protected void onPause() {
     super.onPause();
@@ -69,7 +70,6 @@ public class LetterListActivity
 
     presenter.onDestroy();
   }
-
 
   public void onClickLetterListButton(View view) {
     presenter.onClickLetterListButton();

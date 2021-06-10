@@ -34,7 +34,6 @@ public class LetterData implements BaseData {
     long val = -1;
 
     do {
-
       final UUID uid = UUID.randomUUID();
       final ByteBuffer buffer = ByteBuffer.wrap(new byte[16]);
       buffer.putLong(uid.getLeastSignificantBits());
